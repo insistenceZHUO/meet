@@ -1,0 +1,15 @@
+ext {
+  /// android配置
+  android = [
+    compileSdk   : 31,
+    applicationId: "com.example.meet",
+    minSdk       : 21,
+    targetSdk    : 31,
+    versionCode  : 1,
+    versionName  : "1.0",
+  ]
+  /// 依赖配置
+  dependencies = [
+    "implementation": 'androidx.appcompat:appcompat:1.2.0'
+  ]
+}
