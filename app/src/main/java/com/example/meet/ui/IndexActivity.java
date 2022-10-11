@@ -1,6 +1,5 @@
 package com.example.meet.ui;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -48,17 +47,20 @@ public class IndexActivity extends AppCompatActivity {
         if (isFirstApp) {
             // 跳转到引导页
             intent.setClass(this, GuideActivity.class);
+            // 非第一次启动
+            SpUtils.getInstance().getBoolean(Constants.SP_IS_FIRST_APP, false);
         } else {
             String token = SpUtils.getInstance().getString(Constants.SP_TOKEN, "");
             if (TextUtils.isEmpty(token)) {
                 // 跳转到登陆页面
                 intent.setClass(this, LoginActiveActivity.class);
-            } else  {
+            } else {
                 // 跳转到主页
                 intent.setClass(this, MainActivity.class);
             }
         }
-        System.out.println("IndexActivity.startMain:");
+        startActivity(intent);
+        finish();
     }
 
     @Override

@@ -46,4 +46,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="text_guide_skip">跳过</string>
+    <string name="text_guide_pager_1">每个人，都是一颗孤独的星球</string>
+    <string name="text_guide_pager_2">我们在黑夜中寻找光明</string>
+    <string name="text_guide_pager_3">如果遇见，请面带微笑</string>
 </resources>
