@@ -1,7 +1,6 @@
 
 /// 引入自定义gradle
 apply from: "config.gradle"
-
 buildscript {
     repositories {
         google()

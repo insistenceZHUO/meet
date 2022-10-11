@@ -1,31 +1,35 @@
 package com.example.meet;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.framework.base.BaseUIActivity;
+import com.example.meet.manager.MediaPlayerManger;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends BaseUIActivity {
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /// android 版本大于5.0;
-        /// 设置一个全屏的状态栏;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            /// 获取顶层的view; getWindow().getDecorView();
-//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            /// 隐藏状态栏;View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-            /// 把状态栏设置为透明;
-//            getWindow().setStatusBarColor(Color.TRANSPARENT);
-//            getSupportActionBar().hide();
-//            getWindow().getDecorView();
-        }
+        MediaPlayerManger mediaPlayerManger = new MediaPlayerManger();
+
+        /// 获取文件对象;
+        AssetFileDescriptor fileDescriptor = getResources().openRawResourceFd(R.raw.guide);
+        mediaPlayerManger.startPlay(fileDescriptor);
+
+        mediaPlayerManger.setOnProgressListener(new MediaPlayerManger.OnMusicProgressList() {
+            @Override
+            public void onProgress(int progress, int pos) {
+            }
+        });
     }
 }

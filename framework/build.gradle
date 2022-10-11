@@ -16,7 +16,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            //自定义Gradle常量
+            buildConfigField("boolean","LOG_DEBUG","true")
+            buildConfigField("String","LOG_TAG","\"Meet\"")
+            buildConfigField("String","SP_NAME","\"Config\"")
+        }
         release {
+            buildConfigField("boolean","LOG_DEBUG","true")
+            buildConfigField("String","LOG_TAG","\"Meet\"")
+            buildConfigField("String","SP_NAME","\"Config\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
