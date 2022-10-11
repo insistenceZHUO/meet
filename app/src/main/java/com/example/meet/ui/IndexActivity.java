@@ -3,12 +3,15 @@ package com.example.meet.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 
 import com.example.framework.entity.Constants;
 import com.example.framework.utils.SpUtils;
+import com.example.meet.MainActivity;
 import com.example.meet.R;
 
 
@@ -40,8 +43,22 @@ public class IndexActivity extends AppCompatActivity {
 
     private void startMain() {
         // 判断app是否是第一次启动
-        Boolean a = SpUtils.getInstance().getBoolean(Constants.SP_IS_FIRST_APP, true);
-        System.out.println("IndexActivity.startMain:" + a);
+        Boolean isFirstApp = SpUtils.getInstance().getBoolean(Constants.SP_IS_FIRST_APP, true);
+        Intent intent = new Intent();
+        if (isFirstApp) {
+            // 跳转到引导页
+            intent.setClass(this, GuideActivity.class);
+        } else {
+            String token = SpUtils.getInstance().getString(Constants.SP_TOKEN, "");
+            if (TextUtils.isEmpty(token)) {
+                // 跳转到登陆页面
+                intent.setClass(this, LoginActiveActivity.class);
+            } else  {
+                // 跳转到主页
+                intent.setClass(this, MainActivity.class);
+            }
+        }
+        System.out.println("IndexActivity.startMain:");
     }
 
     @Override
