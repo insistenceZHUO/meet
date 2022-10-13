@@ -191,4 +191,10 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
                 throw new IllegalStateException("Unexpected value: " + view);
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mGuideMusic.stopPlay();
+    }
 }

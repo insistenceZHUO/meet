@@ -14,14 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Meet">
-        <!--OPPO 手机适配刘海屏-->
+        <activity
+            android:name=".ui.IndexActivity"
+            android:exported="false" />
+        <!-- OPPO 手机适配刘海屏 -->
         <meta-data
             android:name="android.max.aspect"
-            android:value="2.2"></meta-data>
-        <!--小米手机适配-->
+            android:value="2.2" /> <!-- 小米手机适配 -->
         <meta-data
             android:name="notch.config"
-            android:value="portrait|landscape"></meta-data>
+            android:value="portrait|landscape" />
 
         <activity
             android:name=".ui.LoginActiveActivity"
@@ -31,7 +33,7 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".ui.IndexActivity"
+            android:name=".test.TestActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
