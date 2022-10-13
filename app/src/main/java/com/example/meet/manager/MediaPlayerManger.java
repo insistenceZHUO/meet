@@ -33,9 +33,9 @@ public class MediaPlayerManger {
      * 2.将进度计算结果对外抛出
      * 3.
      */
-    private Handler mHandler = new Handler(new Handler.Callback(){
+    private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
-        public boolean handleMessage(@NonNull Message message) {
+        public boolean handleMessage(Message message) {
             switch (message.what) {
                 case H_PROGRESS:
                     if (musicProgressList != null) {
@@ -67,7 +67,7 @@ public class MediaPlayerManger {
             /// 重置播放
             mMediaPlayer.reset();
             /// 设置播放源
-            mMediaPlayer.setDataSource(fileDescriptor);
+            mMediaPlayer.setDataSource(fileDescriptor.getFileDescriptor(), fileDescriptor.getStartOffset(), fileDescriptor.getLength());
             /// 装载
             mMediaPlayer.prepare();
             /// 开始播放
@@ -166,6 +166,7 @@ public class MediaPlayerManger {
 
     /**
      * 播放进度
+     *
      * @param listener
      */
     public void setOnProgressListener(OnMusicProgressList listener) {
