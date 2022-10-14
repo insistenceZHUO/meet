@@ -3,6 +3,7 @@ package com.example;
 
 import android.content.Context;
 
+import com.example.framework.bmob.BmobManger;
 import com.example.framework.utils.SpUtils;
 
 public class Framework {
@@ -25,5 +26,6 @@ public class Framework {
 
     public void initFramework(Context mContext) {
         SpUtils.getInstance().initSp(mContext);
+        BmobManger.getInstance().initBmob(mContext);
     }
 }

@@ -39,16 +39,21 @@ public class TouchPictureV extends View {
     /// 误差值
     private int errorValues = 10;
 
-    private OnResultListener viewResultListener;
+    private OnViewResultListener viewResultListener;
     public TouchPictureV(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
+    }
+
+    public void setViewResultListener(OnViewResultListener viewResultListener) {
+        this.viewResultListener = viewResultListener;
     }
 
     public TouchPictureV(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
+
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -109,6 +114,7 @@ public class TouchPictureV extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_MOVE:
                 //防止越界
                 if (event.getX() > 0 && event.getX() < (mWidth - CARD_SIZE)){
@@ -132,7 +138,7 @@ public class TouchPictureV extends View {
         return true;
     }
 
-    public interface OnResultListener {
+    public interface OnViewResultListener {
         void onResult();
     }
 }

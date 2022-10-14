@@ -18,14 +18,14 @@ android {
     buildTypes {
         debug {
             //自定义Gradle常量
-            buildConfigField("boolean","LOG_DEBUG","true")
-            buildConfigField("String","LOG_TAG","\"Meet\"")
-            buildConfigField("String","SP_NAME","\"Config\"")
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            buildConfigField("String", "LOG_TAG", "\"Meet\"")
+            buildConfigField("String", "SP_NAME", "\"Config\"")
         }
         release {
-            buildConfigField("boolean","LOG_DEBUG","true")
-            buildConfigField("String","LOG_TAG","\"Meet\"")
-            buildConfigField("String","SP_NAME","\"Config\"")
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            buildConfigField("String", "LOG_TAG", "\"Meet\"")
+            buildConfigField("String", "SP_NAME", "\"Config\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -41,7 +41,14 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
 //  implementation project(path: ':app')
-  testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    /// bmob
+    api rootProject.ext.dependencies["bmobsdk"]
+    api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["rxandroid2"]
+    api rootProject.ext.dependencies["okhttp3"]
+    api rootProject.ext.dependencies["okio"]
+    api rootProject.ext.dependencies["gson"]
 }
