@@ -11,9 +11,5 @@
         android:layout_height="300dp"
         android:id="@+id/item_touch_helper_previous_elevation"
         tools:ignore="MissingConstraints" />
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent">-->
-    <!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

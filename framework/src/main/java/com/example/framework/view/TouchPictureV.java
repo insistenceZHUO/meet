@@ -130,6 +130,9 @@ public class TouchPictureV extends View {
                 if (moveX >(LINE_W - errorValues) && moveX <= LINE_W +errorValues) {
                     if(viewResultListener != null) {
                         viewResultListener.onResult();
+                        // 重置
+                      moveX = 200;
+                      invalidate();
                     }
                 }
                 break;

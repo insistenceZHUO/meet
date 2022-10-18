@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".test.TestBmonActivity"
+  >
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="MissingConstraints">
+
+    <Button
+      android:id="@+id/add"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="增加一条数据" />
+
+    <Button
+      android:id="@+id/del"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="删除一条数据" />
+
+    <Button
+      android:id="@+id/query"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="查询一条数据" />
+
+    <Button
+      android:id="@+id/update"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="修改一条数据" />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

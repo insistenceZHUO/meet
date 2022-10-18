@@ -3,13 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.17777777777777778" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/guide_night_anim.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/guide_smile_anim.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/guide_star_anim.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/login_btn_bg.xml" value="0.15092592592592594" />
+        <entry key="app/src/main/res/drawable/login_edit_bg.xml" value="0.13796296296296295" />
         <entry key="app/src/main/res/layout/activity_guide.xml" value="0.18429003021148035" />
+        <entry key="app/src/main/res/layout/activity_login_active.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3203125" />
+        <entry key="app/src/main/res/layout/activity_test_bmob.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_test_bmon.xml" value="0.3234375" />
+        <entry key="app/src/main/res/layout/dialog_code_view.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/layout_pager_guide_1.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/layout/layout_pager_guide_2.xml" value="0.9954476479514416" />
         <entry key="app/src/main/res/layout/layout_pager_guide_3.xml" value="0.9954476479514416" />

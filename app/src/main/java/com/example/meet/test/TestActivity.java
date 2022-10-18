@@ -3,12 +3,18 @@ package com.example.meet.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
+import com.example.framework.base.BaseUIActivity;
+import com.example.framework.bmob.MyData;
 import com.example.framework.view.TouchPictureV;
 import com.example.meet.R;
 
-public class TestActivity extends AppCompatActivity {
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+
+public class TestActivity extends BaseUIActivity  {
 
     private TouchPictureV touchPictureV;
 
